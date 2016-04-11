@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   resources :jobs
   # get 'index', to: 'jobs#index', :as => :jobs
   # get 'new', to: 'jobs#new', :as => :new_jobs
