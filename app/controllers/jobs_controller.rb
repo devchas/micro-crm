@@ -1,8 +1,9 @@
 class JobsController < ApplicationController
+	before_action :authenticate_user!
 
 	# GET /jobs
 	def index
-		@jobs = Job.all
+		@jobs = Job.where(:user_id => current_user.id)
 	end
 
 	# GET /jobs/new
@@ -13,6 +14,7 @@ class JobsController < ApplicationController
 	# POST /jobs
 	def create
 		@job = Job.new(job_params)
+		@job.user_id = current_user.id
 
 		if @job.save 
 			respond_to do |format|
