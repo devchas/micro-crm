@@ -1,5 +1,4 @@
 Rails.application.configure do
-  routes.default_url_options[:host] = 'smtp.sendgrid.net'
 
 
   # Settings specified here will take precedence over those in config/application.rb.
