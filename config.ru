@@ -2,3 +2,5 @@
 
 require ::File.expand_path('../config/environment', __FILE__)
 run Rails.application
+
+ActionMailer::Base.raise_delivery_errors = true
